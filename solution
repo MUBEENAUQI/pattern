@@ -1,0 +1,44 @@
+public class pattern1 {
+    public static void solution(int x, int y) {
+       
+        int[][] pat=new int[x][y];
+        int xy=x*y,a=1;
+        int i,j,k,o;
+            for(i=0;i!=x;i++)
+            { 
+                
+                for(j=i,k=0;j>=0;k++,j--)
+                {
+                    
+                    pat[j][k]=a;
+                    
+                    a++;
+                    --xy;
+                }
+                
+            }
+            o=1;
+            for(i=x-1;xy!=0;i--)
+            {
+               
+                for(j=x-1,k=o;k<=y-1;k++,j--)
+                {
+                  pat[j][k]=a;
+                  
+                    a++;
+                    --xy;  
+                }
+            o++;
+                
+           }
+       for(i=0;i<x;i++)
+       {
+          
+          for(j=0;j<y;j++)
+          {
+              System.out.print(pat[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+  }
